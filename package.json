@@ -4,7 +4,8 @@
   "description": "Blog for technical information",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
