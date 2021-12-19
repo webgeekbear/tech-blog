@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     Post.findAll({
             attributes: [
                 'id',
-                'content',
+                'contents',
                 'title',
                 'created_at'
             ],
@@ -79,10 +79,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-    // expects {title: 'Taskmaster goes public!', content: 'https://taskmaster.com/press', user_id: 1}
+    // expects {title: 'Taskmaster goes public!', contents: 'https://taskmaster.com/press', user_id: 1}
     Post.create({
             title: req.body.title,
-            content: req.body.content,
+            contents: req.body.contents,
             user_id: req.session.user_id
         })
         .then(dbPostData => res.json(dbPostData))
@@ -95,7 +95,7 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Post.update({
             title: req.body.title,
-            content: req.body.content
+            contents: req.body.contents
         }, {
             where: {
                 id: req.params.id
