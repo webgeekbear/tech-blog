@@ -7,7 +7,6 @@ A simple blog to track technical issues
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [License](#license)
 * [Technologies](#technologies)
 * [Deployment](#deployment)
 
